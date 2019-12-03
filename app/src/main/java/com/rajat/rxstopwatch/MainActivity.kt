@@ -12,10 +12,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var compositeDisposable: CompositeDisposable
-    private var ms: String = "0"
-    private var hour: String = "0"
-    private var minutes: String = "0"
-    private var seconds: String = "0"
+    private var ms: String = ""
+    private var hour: String = ""
+    private var minutes: String = ""
+    private var seconds: String = ""
     private var startTime: Long = 0L
     private var time = 0L
 

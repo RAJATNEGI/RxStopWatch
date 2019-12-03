@@ -14,6 +14,10 @@ class MyViewModel : ViewModel() {
     private val pause = BehaviorSubject.create<Long>()
     private val resume = BehaviorSubject.createDefault(0L)
 
+    private var stopWatchTime = StopWatchTime()
+
+
+    fun getCurrentTime():Long{ return pause.value!! }
 
     fun registerSubject(observable: Observable<StopWatchState>):Disposable = observable.subscribe {publish.onNext(it)}
 
@@ -22,6 +26,7 @@ class MyViewModel : ViewModel() {
             when (it) {
                 StopWatchState.IDLE -> {
                     Observable.just(StopWatchTime())
+                        .doOnNext{stopWatchTime.time = it.time}
                         .doOnNext { pause.onNext(it.time) }
                         .doOnNext { resume.onNext(it.time) }
                 }
