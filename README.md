@@ -20,3 +20,6 @@ To include these dependencies in your project add these dependency in your gradl
     
     //life cycle for android(ViewModel,LiveData)
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-rc02'
+
+
+https://user-images.githubusercontent.com/30105033/70039275-a77b7e00-15df-11ea-811e-a73822b51257.png
